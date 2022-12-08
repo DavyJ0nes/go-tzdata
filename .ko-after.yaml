@@ -1,0 +1,13 @@
+defaultBaseImage: gcr.io/distroless/static:nonroot
+
+builds:
+  - id: test
+    main: .
+    flags:
+      - -tags
+      - netgo
+      - -tags
+      - timetzdata
+    ldflags:
+      - -s -w
+      - -extldflags "-static"
